@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-multipart
+pdfplumber
+pymupdf
+neo4j-driver
+chromadb
+langchain
+requests
+python-dotenv
