@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-ink-200;
+  }
+  
+  body {
+    @apply bg-paper text-ink-900 font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-lingnan-600 text-white rounded-lg hover:bg-lingnan-700 
+           transition-colors duration-200 font-medium;
+  }
+  
+  .btn-secondary {
+    @apply px-4 py-2 bg-white border border-ink-300 text-ink-700 rounded-lg 
+           hover:bg-ink-50 transition-colors duration-200 font-medium;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-ink-100 p-6;
+  }
+  
+  .section-title {
+    @apply text-2xl font-serif font-semibold text-ink-900 mb-4;
+  }
+  
+  .classical-text {
+    @apply font-serif text-lg leading-loose text-ink-800;
+  }
+  
+  .annotation {
+    @apply text-sm text-lingnan-600 bg-lingnan-50 px-2 py-1 rounded cursor-help
+           hover:bg-lingnan-100 transition-colors;
+  }
+  
+  .knowledge-node {
+    @apply inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm
+           bg-white border border-ink-200 shadow-sm hover:shadow-md
+           hover:border-lingnan-300 transition-all cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.ink.300') transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: theme('colors.ink.300');
+    border-radius: 3px;
+  }
+}
+
+/* 古文阅读器样式 */
+.classical-reader {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* 知识图谱容器 */
+.graph-container {
+  @apply w-full h-full bg-ink-50 rounded-xl overflow-hidden;
+}
+
+/* 术语高亮 */
+.term-highlight {
+  @apply relative;
+}
+
+.term-highlight::after {
+  content: '';
+  @apply absolute bottom-0 left-0 right-0 h-0.5 bg-lingnan-400;
+}
